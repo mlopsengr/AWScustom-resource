@@ -18,5 +18,5 @@ class OpStack(Stack):
         )
 
 app = App()
-OpStack(app, "CustomrResourceOpstack")
+OpStack(app, "CustomResourceOpstack")
 app.synth()
