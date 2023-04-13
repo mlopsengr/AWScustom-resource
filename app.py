@@ -3,7 +3,7 @@ from aws_cdk import (
     App, Stack
 )
 
-from my_custom_resource import MyCustomResource
+from ops_custom_resource import MyCustomResource
 
 class OpStack(Stack):
     def __init__(self, scope: App, id: str, **kwargs) -> None:

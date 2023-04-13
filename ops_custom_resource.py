@@ -11,7 +11,7 @@ from aws_cdk.custom_resources import (
 
 from constructs import Construct
 
-class MyCustomeResource(Construct):
+class MyCustomResource(Construct):
 
     def __init__(self, scope: Construct, id: str, bucket_name):
         super().__init__(scope, id)
