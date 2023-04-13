@@ -13,4 +13,11 @@ class OpStack(Stack):
         bucket = s3.Bucket(self, "CustomResourceBucket",
                            encryption=s3.BucketEncryption.S3_MANAGED, block_public_access=s3.BlockPublicAccess.BLOCK_ALL)
         
-        # add another custom resource
+        resource = MyCustomResource(
+            self, "MyCustomResource",
+            bucket_name=bucket.bucket_name
+        )
+
+app = App()
+OpStack(app, "CustomrResourceOpstack")
+app.synth()
