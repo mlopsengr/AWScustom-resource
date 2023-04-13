@@ -42,16 +42,15 @@ class MyCustomResource(Construct):
 
         )
 
-        def delete(self, bucket_name):
+    def delete(self, bucket_name):
 
-            delete_params = {
-                "Bucket": bucket_name,
-                "Key": "OpsWorld.txt"
-            }
-
-            return AwsSdkCall(
-                action='deleteObject',
-                service='S3',
-                parameters=delete_params,
-                physical_resource_id=PhysicalResourceId.of('myAutomationExecution')
-            )
+        delete_params = {
+           "Bucket": bucket_name,
+           "Key": "OpsWorld.txt"
+        }
+        return AwsSdkCall(
+            action='deleteObject',
+            service='S3',
+            parameters=delete_params,
+            physical_resource_id=PhysicalResourceId.of('myAutomationExecution')
+        )
