@@ -19,7 +19,7 @@ class MyCustomResource(Construct):
         res = AwsCustomResource(
             scope=self,
             id='AWSCustomResource',
-            policy=AwsCustomResourcePolicy.from_sdk_calls(resrources=[f'arn:aws:s3:::{bucket_name}/*']),
+            policy=AwsCustomResourcePolicy.from_sdk_calls(resources=[f'arn:aws:s3:::{bucket_name}/*']),
             log_retention=logs.RetentionDays.INFINITE,
             on_create=self.create(bucket_name),
             on_delete=self.delete(bucket_name),
