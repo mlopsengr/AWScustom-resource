@@ -31,7 +31,7 @@ class MyCustomResource(Construct):
         create_params = {
             "Body": "Ops world", # This is the content of the file
             "Bucket": bucket_name,
-            "key": "OpsWorld.txt"
+            "Key": "OpsWorld.txt"
         }
 
         return AwsSdkCall(
@@ -54,3 +54,12 @@ class MyCustomResource(Construct):
             parameters=delete_params,
             physical_resource_id=PhysicalResourceId.of('myAutomationExecution')
         )
+    
+
+    # the benfit of a custom resource is that you can use the same code to create and delete the resource
+    # in this case, the resource is a file in an S3 bucket
+    # why it is create as a custom resource is because the CDK does not have a construct for S3 objects
+    # so we have to create it ourselves
+    # the custom resource is a wrapper around the AWS SDK
+    
+    # 
