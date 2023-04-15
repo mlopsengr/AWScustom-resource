@@ -1,6 +1,6 @@
 use aws_cdk::core::Stack;
 use aws_cdk::aws_s3::{Bucket, BlockPublicAccess, BucketEncryption};
-use ops_custom_resource::MyCustomResource;
+use main::MyCustomResource;
 
 struct OpStack<'a> {
     scope: &'a App<'a>,
